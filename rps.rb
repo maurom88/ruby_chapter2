@@ -2,6 +2,10 @@
 player_one = ""
 player_two = ""
 
+# Declare two empty variables to count wins
+player_one_wins = 0
+player_two_wins = 0
+
 # Set variable to determine whether the user entered a valid input or not
 accepted_value = false
 
@@ -50,10 +54,12 @@ while play_again == true
         when "Paper"
             puts "Paper covers rock"
             puts "Player two wins"
+            player_two_wins += 1
             play_again = false
         when "Scissors"
             puts "Rock crushes scissors"
             puts "Player one wins"
+            player_one_wins += 1
             play_again = false
         end
     when "Paper"
@@ -61,12 +67,14 @@ while play_again == true
         when "Rock"
             puts "Paper covers rock"
             puts "Player one wins"
+            player_one_wins += 1
             play_again = false
         when "Paper"
             puts "Tie!"
         when "Scissors"
             puts "Scissors cut paper"
             puts "Player two wins"
+            player_two_wins += 1
             play_again = false
         end
     when "Scissors"
@@ -74,10 +82,12 @@ while play_again == true
         when "Rock"
             puts "Rock crushes scissors"
             puts "Player two wins"
+            player_two_wins += 1
             play_again = false
         when "Paper"
             puts "Scissors cut paper"
             puts "Player one wins"
+            player_one_wins += 1
             play_again = false
         when "Scissors"
             puts "Tie!"
