@@ -55,12 +55,16 @@ while play_again == true
             puts "Paper covers rock"
             puts "Player two wins"
             player_two_wins += 1
-            play_again = false
+            if player_two_wins >= 2
+                play_again = false
+            end
         when "Scissors"
             puts "Rock crushes scissors"
             puts "Player one wins"
             player_one_wins += 1
-            play_again = false
+            if player_one_wins >= 2
+                play_again = false
+            end
         end
     when "Paper"
         case player_two
@@ -68,29 +72,43 @@ while play_again == true
             puts "Paper covers rock"
             puts "Player one wins"
             player_one_wins += 1
-            play_again = false
+            if player_one_wins >= 2
+                play_again = false
+            end
         when "Paper"
             puts "Tie!"
         when "Scissors"
             puts "Scissors cut paper"
             puts "Player two wins"
             player_two_wins += 1
-            play_again = false
+            if player_two_wins >= 2
+                play_again = false
+            end
         end
     when "Scissors"
         case player_two
         when "Rock"
             puts "Rock crushes scissors"
             puts "Player two wins"
-            player_two_wins += 1
+            if player_two_wins >= 2
+                play_again = false
+            end
             play_again = false
         when "Paper"
             puts "Scissors cut paper"
             puts "Player one wins"
             player_one_wins += 1
-            play_again = false
+            if player_one_wins >= 2
+                play_again = false
+            end
         when "Scissors"
             puts "Tie!"
         end
     end
+end
+
+if player_one_wins > player_two_wins
+    puts "Player one wins with #{player_one_wins} wins over player two (#{player_two_wins} win)"
+else
+    puts "Player two wins with #{player_two_wins} wins over player one (#{player_one_wins} win)"
 end
