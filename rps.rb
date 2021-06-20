@@ -5,11 +5,11 @@ player_two = ""
 
 # Get first input
 print "Player one - Enter your selection: "
-player_one = gets.chomp
+player_one = gets.chomp.capitalize
 
 # Get second input
 print "Player two - Enter your selection: "
-player_two = gets.chomp
+player_two = gets.chomp.capitalize
 
 # Print outcome of game
 case player_one
