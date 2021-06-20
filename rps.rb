@@ -1,15 +1,33 @@
 # Declare two empty variables to store the players' selections
 player_one = ""
 player_two = ""
+accepted_value = false
 
 
 # Get first input
-print "Player one - Enter your selection: "
-player_one = gets.chomp.capitalize
+until accepted_value == true
+    print "Player one - Enter your selection: "
+    player_one = gets.chomp.capitalize
+    case player_one
+    when "Rock", "Paper", "Scissors"
+        accepted_value = true
+    else
+        puts "No cheaters! Only rock, paper, scissors allowed"
+    end
+end
 
+accepted_value = false
 # Get second input
-print "Player two - Enter your selection: "
-player_two = gets.chomp.capitalize
+until accepted_value == true
+    print "Player two - Enter your selection: "
+    player_two = gets.chomp.capitalize
+    case player_two
+    when "Rock", "Paper", "Scissors"
+        accepted_value = true
+    else
+        puts "No cheaters! Only rock, paper, scissors allowed"
+    end
+end
 
 # Print outcome of game
 case player_one
@@ -21,8 +39,6 @@ when "Rock"
         puts "Paper covers rock"
     when "Scissors"
         puts "Rock crushes scissors"
-    else
-        puts "No cheaters! Only rock, paper, scissors allowed"
     end
 when "Paper"
     case player_two
@@ -32,8 +48,6 @@ when "Paper"
         puts "Tie!"
     when "Scissors"
         puts "Scissors cut paper"
-    else
-        puts "No cheaters! Only rock, paper, scissors allowed"
     end
 when "Scissors"
     case player_two
@@ -43,9 +57,5 @@ when "Scissors"
         puts "Scissors cut paper"
     when "Scissors"
         puts "Tie!"
-    else
-        puts "No cheaters! Only rock, paper, scissors allowed"
     end
-else
-    puts "No cheaters! Only rock, paper, scissors allowed"
 end
