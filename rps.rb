@@ -21,6 +21,8 @@ when "Rock"
         puts "Paper covers rock"
     when "Scissors"
         puts "Rock crushes scissors"
+    else
+        puts "No cheaters! Only rock, paper, scissors allowed"
     end
 when "Paper"
     case player_two
@@ -30,6 +32,8 @@ when "Paper"
         puts "Tie!"
     when "Scissors"
         puts "Scissors cut paper"
+    else
+        puts "No cheaters! Only rock, paper, scissors allowed"
     end
 when "Scissors"
     case player_two
@@ -39,5 +43,9 @@ when "Scissors"
         puts "Scissors cut paper"
     when "Scissors"
         puts "Tie!"
+    else
+        puts "No cheaters! Only rock, paper, scissors allowed"
     end
+else
+    puts "No cheaters! Only rock, paper, scissors allowed"
 end
